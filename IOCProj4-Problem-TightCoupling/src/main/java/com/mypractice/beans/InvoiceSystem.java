@@ -19,7 +19,8 @@ public class InvoiceSystem {
 
 	public String invoice(String[] item) {
 		// TODO Auto-generated method stub
-		System.out.println("Flipkart:: shopping(-)");
+
+		System.out.println("InvoiceSystem.invoice()");
 		float billAmt=0.0f;
 		Random invoiceID=null;
 		int i=0;
