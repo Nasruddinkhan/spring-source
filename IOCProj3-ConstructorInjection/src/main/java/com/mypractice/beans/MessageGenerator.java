@@ -8,10 +8,10 @@ public class MessageGenerator {
 		System.out.println("MessageGenerator.enclosing_method()");
 	}
 
-	public MessageGenerator(Date date) {
+	public MessageGenerator(Date date2) {
 		super();
 		// TODO Auto-generated constructor stub
-		System.out.println("MessageGenerator.MessageGenerator()"+date);
+		System.out.println("MessageGenerator.MessageGenerator()"+date2);
 		this.date = date;
 		
 	}

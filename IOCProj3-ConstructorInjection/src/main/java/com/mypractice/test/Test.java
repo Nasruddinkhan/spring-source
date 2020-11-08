@@ -15,7 +15,7 @@ public class Test {
 		BeanFactory factory = null;
 		MessageGenerator generator = null;
 		// Hold spring bean cfg file
-		res = new ClassPathResource("applicationContext.xml");
+		res = new ClassPathResource("com/beans/config/applicationContext.xml");
 		// create IOC container
 		factory = new XmlBeanFactory(res);
 		// get Target class obj
