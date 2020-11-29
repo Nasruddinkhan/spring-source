@@ -55,6 +55,8 @@
 				<prop key="CHI">Noodle</prop>
 			</props>
 		</constructor-arg>
+		<!-- Null injector <constructor-arg name="menus"><null/></constructor-arg> -->
+
 	</bean>
 	<bean id="company" class="com.mypractice.bean.Company">
 		<property name="empName">
@@ -93,62 +95,70 @@
 				</entry>
 			</map>
 		</property>
-			<property name="addJoiningDate">
+		<property name="addJoiningDate">
 			<map value-type="java.util.Map">
-				<entry key="NK" value-ref="dt1"/>
+				<entry key="NK" value-ref="dt1" />
 			</map>
 		</property>
 	</bean>
-			<bean id="sysDt"  class="java.util.Date"/>
-		<bean id="dobDt"  class="java.util.Date">
-		    <property name="year"  value="90"/>
-		    <property name="month"  value="9"/>
-		    <property name="date"  value="27"/>
-		</bean>
-		
-   <util:list id="empList" list-class="java.util.LinkedList" value-type="java.lang.String">
-        <value>raja</value>
-        <value>raja</value>
-        <value>rani</value>
-   </util:list>
-   
-   <util:list id="dtList" list-class="java.util.Vector" value-type="java.util.Date">
-        <ref bean="sysDt"/>
-        <ref bean="dobDt"/>
-   </util:list>
-   
-   <util:set id="phonesSet"  set-class="java.util.HashSet" value-type="java.lang.Long">
-     <value>99999999999</value>
-     <value>88888888888</value>
-     <value>77777777777</value>
-     <value>99999999999</value>
-   </util:set>
-   <util:set id="dtSet" set-class="java.util.LinkedHashSet"  value-type="java.util.Date">
-         <ref bean="sysDt"/>
-         <ref bean="dobDt"/>
-         <ref bean="sysDt"/>
-     </util:set>
-     
-     <util:map id="capitalsMap" map-class="java.util.Hashtable" key-type="java.lang.String" value-type="java.lang.String">
-          <entry key="india" value="newDelhi"/>
-          <entry>
-             <key><value>China</value></key>
-             <value>bejing</value>
-          </entry>
-            <entry  key="pakistan"  value="islamabad"/>
-     </util:map>
-     
-     <util:map  id="dtMap" map-class="java.util.LinkedHashMap"  key-type="java.lang.String"   value-type="java.util.Date">
-           <entry key="sysDate" value-ref="sysDt"/>
-           <entry key="dobDate"  value-ref="dobDt"/>
-     </util:map>
-     
-     <util:properties id="stateCapitals">
-        <prop key="AP">Amaravathi</prop>
-        <prop key="TS">Hyderabad</prop>
-        <prop key="MP">Bhopal</prop>
-        <prop key="MH">Mumbai</prop>
-     </util:properties>
-     
-   
+	<bean id="sysDt" class="java.util.Date" />
+	<bean id="dobDt" class="java.util.Date">
+		<property name="year" value="90" />
+		<property name="month" value="9" />
+		<property name="date" value="27" />
+	</bean>
+
+	<util:list id="empList" list-class="java.util.LinkedList"
+		value-type="java.lang.String">
+		<value>raja</value>
+		<value>raja</value>
+		<value>rani</value>
+	</util:list>
+
+	<util:list id="dtList" list-class="java.util.Vector"
+		value-type="java.util.Date">
+		<ref bean="sysDt" />
+		<ref bean="dobDt" />
+	</util:list>
+
+	<util:set id="phonesSet" set-class="java.util.HashSet"
+		value-type="java.lang.Long">
+		<value>99999999999</value>
+		<value>88888888888</value>
+		<value>77777777777</value>
+		<value>99999999999</value>
+	</util:set>
+	<util:set id="dtSet" set-class="java.util.LinkedHashSet"
+		value-type="java.util.Date">
+		<ref bean="sysDt" />
+		<ref bean="dobDt" />
+		<ref bean="sysDt" />
+	</util:set>
+
+	<util:map id="capitalsMap" map-class="java.util.Hashtable"
+		key-type="java.lang.String" value-type="java.lang.String">
+		<entry key="india" value="newDelhi" />
+		<entry>
+			<key>
+				<value>China</value>
+			</key>
+			<value>bejing</value>
+		</entry>
+		<entry key="pakistan" value="islamabad" />
+	</util:map>
+
+	<util:map id="dtMap" map-class="java.util.LinkedHashMap"
+		key-type="java.lang.String" value-type="java.util.Date">
+		<entry key="sysDate" value-ref="sysDt" />
+		<entry key="dobDate" value-ref="dobDt" />
+	</util:map>
+
+	<util:properties id="stateCapitals">
+		<prop key="AP">Amaravathi</prop>
+		<prop key="TS">Hyderabad</prop>
+		<prop key="MP">Bhopal</prop>
+		<prop key="MH">Mumbai</prop>
+	</util:properties>
+
+
 </beans>
