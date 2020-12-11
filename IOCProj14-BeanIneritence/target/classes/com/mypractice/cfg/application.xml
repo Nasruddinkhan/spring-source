@@ -29,4 +29,30 @@
 		<property name="color" value="White" />
 		<property name="fuelType" value="CNG , Petrol" />
 	</bean>
+	 <bean id="drds"  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+       <property name="driverClassName"  value="com.mysql.jdbc.Driver"/>
+       <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+       <property name="username" value="root"/>
+       <property name="password"  value="root"/>
+  </bean>
+  
+  <bean id="scds" class="org.springframework.jdbc.datasource.SingleConnectionDataSource" parent="drds"/>
+  
+  <!-- Apache DBCP -->
+  <bean id="apacheDS"  class="org.apache.commons.dbcp2.BasicDataSource"  parent="drds"/>
+  
+   <!-- Cfg DAO class -->
+   <bean id="stDAO"  class="com.mypractice.dao.StudentDAOImpl">
+        <!-- <property name="ds"  ref="drds"/> -->
+       <!--  <property name="ds"  ref="scds"/> -->
+       <property name="ds" ref="apacheDS"/>
+   </bean>
+   <!-- Cfg service class -->
+   <bean id="stService"  class="com.mypractice.service.StudentServiceImpl">
+       <property name="dao" ref="stDAO"/>
+   </bean>
+   <!-- Cfg controller class -->
+   <bean id="controller"  class="com.mypractice.controller.MainController">
+       <property name="service"  ref="stService"/>
+   </bean>
 </beans>
