@@ -1,15 +1,18 @@
 package com.mypractice.beans;
 
-public class MessageGenerator {
+import java.util.Date;
 
+public class MessageGenerator {
+	private Date date;
 	
-	public MessageGenerator() {
+	private MessageGenerator(Date dt) {
 		super();
+		date = dt;
 		// TODO Auto-generated constructor stub
 		System.out.println("MessageGenerator.MessageGenerator()");
 	}
 	public String sayHello(String user) {
-		return "Hi "+user;
+		return "Hi "+user+ "your calling date"+date;
 	}
 	
 }
