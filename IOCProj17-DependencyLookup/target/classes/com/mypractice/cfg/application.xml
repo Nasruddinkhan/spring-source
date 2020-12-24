@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<bean id="engg" class="com.mypractice.beans.Engine" />
 	
-	<bean id="viechle" class="com.mypractice.beans.Viechle">
+	<bean id="viechle" name="car, bus" class="com.mypractice.beans.Viechle">
 		<constructor-arg name="beanId">
 			<idref bean="engg" />
 		</constructor-arg>

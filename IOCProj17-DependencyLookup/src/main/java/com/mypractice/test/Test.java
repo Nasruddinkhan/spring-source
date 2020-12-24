@@ -18,7 +18,7 @@ public class Test {
 		reader.loadBeanDefinitions("com/mypractice/cfg/application.xml");
 		System.out.println("IOC container of Client App is created");
 		//get Target class object
-		viechle=factory.getBean("viechle",Viechle.class);
+		viechle=factory.getBean("bus",Viechle.class);
 		//invoke methods
 		viechle.journey("MUMBAI","BASTI", factory);
 		viechle.entertainment();
